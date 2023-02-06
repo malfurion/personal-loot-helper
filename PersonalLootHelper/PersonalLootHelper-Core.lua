@@ -610,6 +610,7 @@ local function GetFullItemInfo(item)
 		if fullItemInfo[FII_IS_EQUIPPABLE] then
 
 			-- set up the tooltip to determine values that aren't returned via GetItemInfo()
+			--[[
 			tooltipLong = tooltipLong or PLH_CreateEmptyTooltip(30)
 			tooltipLong:ClearLines()
 			tooltipLong:SetHyperlink(item)
@@ -620,6 +621,9 @@ local function GetFullItemInfo(item)
 				realILVL = fullItemInfo[FII_BASE_ILVL]
 			end
 			fullItemInfo[FII_REAL_ILVL] = tonumber(realILVL)
+			]]--
+
+			fullItemInfo[FII_REAL_ILVL] = fullItemInfo[FII_BASE_ILVL]
 
 			local classes = nil
 			local hasBindTradeTimeWarning = nil
